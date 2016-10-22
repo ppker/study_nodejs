@@ -1,7 +1,4 @@
-var formidable = require('formidable');
-console.log(formidable);
-
-/*var formidable = require('formidable'),
+var formidable = require('formidable'),
 	http = require('http'),
 	util = require('util');
 
@@ -26,4 +23,4 @@ htpp.createServer(function(req, res) {
 		'<input type="submit" value="Upload">' +
 		'</form>'
 	);
-}).listen(8080);*/
+}).listen(8080);

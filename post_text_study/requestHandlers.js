@@ -1,4 +1,6 @@
-var querystring = require("querystring");
+var querystring = require("querystring"),
+	fs = require("fs");
+
 
 function start(response, postData) {
 
@@ -27,5 +29,23 @@ function upload(response, postData) {
 	response.write("你提交的数据是:" + querystring.parse(postData).text);
 	response.end();
 }
+
+function show(response, postData) {
+
+	console.log('开始调用show方法展示图片.');
+	fs.readFile("E:/vvv/02.jpg", "binary", function(error, file) {
+		if (error) {
+			response.writeHead(500, {"Content-Type": "text/plain"});
+			response.write(error + "\n");
+			response.end();
+		} else {
+			response.writeHead(200, {"Content-Type": "image/jpg"});
+			response.write(file, "binary");
+			response.end();
+		}		
+	})
+}
+
 exports.start = start;
 exports.upload = upload;
+exports.show = show;
