@@ -2,7 +2,7 @@ var formidable = require('formidable'),
 	http = require('http'),
 	util = require('util');
 
-htpp.createServer(function(req, res) {
+http.createServer(function(req, res) {
 	if (req.url = '/upload' && req.method.toLowerCase() == 'post') {
 		var form = new formidable.IncomingForm();
 		form.parse(req, function(err, fields, files) {
